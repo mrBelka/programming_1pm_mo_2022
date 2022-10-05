@@ -26,5 +26,8 @@ https://events.webinar.ru/58858683/403581817/record-new/461855002
 
 Лекция 3. Простые алгоритмы и массивы  
 https://events.webinar.ru/58858683/690993527/record-new/1962107501  
+
+Лекция 4. Строки  
+https://events.webinar.ru/58858683/1855432532/record-new/1317679020  
  
 
