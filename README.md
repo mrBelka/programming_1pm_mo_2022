@@ -19,7 +19,7 @@ https://cmake.org/download/
 
 # Лекции  
 Лекция 1. Введение, типы данных, арифметические операции  
-https://events.webinar.ru/58858683/863845877/record-new/1344944928 
+https://youtu.be/jwwuFGv38GE   
 
 Лекция 2. Условия и циклы  
 https://events.webinar.ru/58858683/403581817/record-new/461855002  
@@ -28,6 +28,6 @@ https://events.webinar.ru/58858683/403581817/record-new/461855002
 https://events.webinar.ru/58858683/690993527/record-new/1962107501  
 
 Лекция 4. Строки  
-https://events.webinar.ru/58858683/1855432532/record-new/1317679020  
+https://events.webinar.ru/58858683/1855432532/record-new/1317679020 
  
 
