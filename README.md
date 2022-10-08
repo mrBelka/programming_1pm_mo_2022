@@ -29,3 +29,6 @@ https://youtu.be/sRNcbB6FodQ
 
 Лекция 4. Строки  
 https://youtu.be/k4-IoEyYYwg  
+
+Леция 5. Пользовательские функции  
+https://youtu.be/tVsHFunhAxU  
