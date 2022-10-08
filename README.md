@@ -28,6 +28,4 @@ https://youtu.be/yhfgWi3Ke0A
 https://youtu.be/sRNcbB6FodQ  
 
 Лекция 4. Строки  
-https://events.webinar.ru/58858683/1855432532/record-new/1317679020 
- 
-
+https://youtu.be/k4-IoEyYYwg  
