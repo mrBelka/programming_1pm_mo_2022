@@ -30,5 +30,8 @@ https://youtu.be/sRNcbB6FodQ
 Лекция 4. Строки  
 https://youtu.be/k4-IoEyYYwg  
 
-Леция 5. Пользовательские функции  
+Лекция 5. Пользовательские функции  
 https://youtu.be/tVsHFunhAxU  
+
+Лекция 6. Cmake и система контроля версий  
+https://youtu.be/wkW4HET2PkU  
