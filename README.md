@@ -36,5 +36,8 @@ https://youtu.be/tVsHFunhAxU
 Лекция 6. Cmake и система контроля версий  
 https://youtu.be/wkW4HET2PkU  
 
+Лекция 7. Git bash, начало указателей  
+https://youtu.be/wFNMlbjBHck  
+
 Лекция 8. Работа с памятью  
 https://youtu.be/Q-cUDsCZPTw  
