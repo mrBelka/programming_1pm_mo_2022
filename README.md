@@ -41,3 +41,7 @@ https://youtu.be/wFNMlbjBHck
 
 Лекция 8. Работа с памятью  
 https://youtu.be/Q-cUDsCZPTw  
+
+Лекция 9. Основы ООП  
+https://youtu.be/RW_wOQt17zk  
+https://events.webinar.ru/58858683/627093027/record-new/1759306890  
