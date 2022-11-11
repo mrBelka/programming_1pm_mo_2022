@@ -44,4 +44,6 @@ https://youtu.be/Q-cUDsCZPTw
 
 Лекция 9. Основы ООП  
 https://youtu.be/RW_wOQt17zk  
-https://events.webinar.ru/58858683/627093027/record-new/1759306890  
+
+Лекция 10. ООП и хип  
+https://youtu.be/W7PurWWhIjo   
