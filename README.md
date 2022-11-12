@@ -15,7 +15,9 @@ CMake - система сборки проектов
 https://cmake.org/download/  
 Либо инсталлятор, либо портативная версия (для windows, например, "Windows x64 ZIP")
 
-Ссылка на курс прошлого года https://gitlab.com/mishklgpmi/programmingbasics_1pm2021  (у вас будет немного по-другому). 
+Ссылка на курс прошлого года https://gitlab.com/mishklgpmi/programmingbasics_1pm2021  (у вас будет немного по-другому).  
+
+Внутренее устройство vector от Ильи Мещерина https://www.youtube.com/watch?v=_wE7JYfcKN0  
 
 # Лекции  
 Лекция 1. Введение, типы данных, арифметические операции  
