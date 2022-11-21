@@ -48,4 +48,7 @@ https://youtu.be/Q-cUDsCZPTw
 https://youtu.be/RW_wOQt17zk  
 
 Лекция 10. ООП и хип  
-https://youtu.be/W7PurWWhIjo   
+https://youtu.be/W7PurWWhIjo  
+
+Лекция 11. Библиотека SFML  
+https://youtu.be/KXDuL5d3jRI  
