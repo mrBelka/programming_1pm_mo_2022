@@ -52,3 +52,6 @@ https://youtu.be/W7PurWWhIjo
 
 Лекция 11. Библиотека SFML  
 https://youtu.be/KXDuL5d3jRI  
+
+Лекция 12. Подготовка к экзамену  
+https://youtu.be/QvB2kzPm9po  
