@@ -1,5 +1,7 @@
 #include <Game.hpp>
 #include <iomanip>
+#include <thread>
+#include <chrono>
 
 namespace mt
 {
@@ -28,11 +30,18 @@ namespace mt
     void Game::Run()
     {
         std::vector<mt::Ball*> balls;
-        balls.emplace_back(new mt::Ball({ 0,0 }, { 20,40 }, 10, sf::Color::Red));
-        balls.emplace_back(new mt::Ball({ 0,0 }, { 10, 10 }, 50, sf::Color::Yellow));
 
-        sf::Clock timer;
+        mt::Ball* ball = new mt::Ball({ 0,0 }, { 10, 10 }, 50, sf::Color::Yellow);
+        if (!ball->Setup("redcircle.jpeg"))
+            return;
+        balls.push_back(ball);
 
+        ball = new mt::Ball({ 0,0 }, { 20,40 }, 10, sf::Color::Red);
+        if (!ball->Setup("image.png"))
+            return;
+        balls.push_back(ball);
+
+        m_timer.restart();
         while (m_window->isOpen())
         {
             sf::Event event;
@@ -54,7 +63,7 @@ namespace mt
                 }
             }
 
-            sf::Time dt = timer.restart();
+            sf::Time dt = m_timer.restart();
 
             for(int i=0;i<balls.size();i++)
                 balls[i]->Move(dt.asSeconds());
@@ -63,6 +72,8 @@ namespace mt
             for (int i = balls.size() - 1; i >= 0; i--)
                 m_window->draw(*balls[i]->Get());
             m_window->display();
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(30));
         }
 
         for (int i = 0; i < balls.size(); i++)

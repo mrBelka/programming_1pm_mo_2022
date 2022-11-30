@@ -12,6 +12,7 @@ namespace mt
         int m_width, m_height;
         std::string m_caption;
         sf::RenderWindow* m_window = nullptr;
+        sf::Clock m_timer;
 
     public:
         Game()
