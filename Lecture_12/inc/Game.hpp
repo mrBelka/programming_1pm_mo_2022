@@ -6,6 +6,12 @@
 
 namespace mt
 {
+    enum class Errors
+    {
+        SUCCESS = 0,
+        LOAD_PICTURE,
+    };
+
     class Game
     {
     private:
@@ -13,6 +19,14 @@ namespace mt
         std::string m_caption;
         sf::RenderWindow* m_window = nullptr;
         sf::Clock m_timer;
+        std::vector<mt::Ball*> m_balls;
+
+    private:
+        void PrepareForDisplay()
+        {
+            for (int i = 0; i < m_balls.size(); i++)
+                m_window->draw(*m_balls[i]->Get());
+        }
 
     public:
         Game()
@@ -25,8 +39,8 @@ namespace mt
 
         void SetResolution(int width, int height);
 
-        void Setup();
+        mt::Errors Setup();
 
-        void Run();
+        mt::Errors Run();
     };
 }

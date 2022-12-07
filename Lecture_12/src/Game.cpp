@@ -7,6 +7,9 @@ namespace mt
 {
     Game::~Game()
     {
+        for (int i = 0; i < m_balls.size(); i++)
+            delete m_balls[i];
+
         if (m_window != nullptr)
             delete m_window;
     }
@@ -22,25 +25,30 @@ namespace mt
         m_height = height;
     }
 
-    void Game::Setup()
+    mt::Errors Game::Setup()
     {
         m_window = new sf::RenderWindow(sf::VideoMode(m_width, m_height), m_caption);
+    
+        mt::Ball* ball = new mt::Ball({ 200,200 }, { 0, 20 });
+        if (!ball->Setup("image.png", 0.3, 0.3))
+            return Errors::LOAD_PICTURE;
+        m_balls.push_back(ball);
+
+        ball = new mt::Ball({ 200,250 }, { -100, -20 });
+        if (!ball->Setup("redcircle.png", 0.1, 0.1))
+            return Errors::LOAD_PICTURE;
+        m_balls.push_back(ball);
+
+        ball = new mt::Ball({ 200,250 }, { -20, -20 });
+        if (!ball->Setup("redcircle.png", 0.1, 0.1))
+            return Errors::LOAD_PICTURE;
+        m_balls.push_back(ball);
+
+        return mt::Errors::SUCCESS;
     }
 
-    void Game::Run()
+    mt::Errors Game::Run()
     {
-        std::vector<mt::Ball*> balls;
-
-        mt::Ball* ball = new mt::Ball({ 0,0 }, { 10, 10 }, 50, sf::Color::Yellow);
-        if (!ball->Setup("redcircle.jpeg"))
-            return;
-        balls.push_back(ball);
-
-        ball = new mt::Ball({ 0,0 }, { 20,40 }, 10, sf::Color::Red);
-        if (!ball->Setup("image.png"))
-            return;
-        balls.push_back(ball);
-
         m_timer.restart();
         while (m_window->isOpen())
         {
@@ -51,34 +59,33 @@ namespace mt
                     m_window->close();
             }
 
-            for (int i = 0; i < balls.size(); i++)
+            mt::Ball*& blue = m_balls[0];
+            for(int i=1;i<m_balls.size();i++)
+                m_balls[i]->CheckCollision(blue);    
+
+            for (int i = 0; i < m_balls.size(); i++)
             {
-                Point p = balls[i]->GetPosition();
-                float r = balls[i]->Radius();
+                utils::Point p = m_balls[i]->GetPosition();
+                float r = m_balls[i]->Radius();
 
                 if (p.y + r > m_height)
                 {
-                    Vec v = balls[i]->GetVelocity();
-                    balls[i]->SetVelocity({ v.x, -v.y });
+                    utils::Vec v = m_balls[i]->GetVelocity();
+                    m_balls[i]->SetVelocity({ v.x, -v.y });
                 }
             }
 
             sf::Time dt = m_timer.restart();
 
-            for(int i=0;i<balls.size();i++)
-                balls[i]->Move(dt.asSeconds());
+            for(int i=0;i<m_balls.size();i++)
+                m_balls[i]->Move(dt.asSeconds());
 
             m_window->clear();
-            for (int i = balls.size() - 1; i >= 0; i--)
-                m_window->draw(*balls[i]->Get());
+            PrepareForDisplay();
             m_window->display();
 
-            std::this_thread::sleep_for(std::chrono::milliseconds(30));
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
-
-        for (int i = 0; i < balls.size(); i++)
-            delete balls[i];
-
     }
 }
 
