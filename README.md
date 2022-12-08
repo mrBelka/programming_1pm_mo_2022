@@ -55,3 +55,6 @@ https://youtu.be/KXDuL5d3jRI
 
 Лекция 12. Подготовка к экзамену  
 https://youtu.be/QvB2kzPm9po  
+
+Лекция 13. Подготовка к экзамену  
+https://youtu.be/_bPcXjzCVt0  
