@@ -58,3 +58,6 @@ https://youtu.be/QvB2kzPm9po
 
 Лекция 13. Подготовка к экзамену  
 https://youtu.be/_bPcXjzCVt0  
+
+Лекция 14. Подготовка к экзамену  
+https://youtu.be/TFNaPUYRo5g  
