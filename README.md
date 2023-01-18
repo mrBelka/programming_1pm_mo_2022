@@ -61,3 +61,6 @@ https://youtu.be/_bPcXjzCVt0
 
 Лекция 14. Подготовка к экзамену  
 https://youtu.be/TFNaPUYRo5g  
+
+Лекция 15. Константность, углубление в ООП  
+https://youtu.be/oas_xWU-6pg  
