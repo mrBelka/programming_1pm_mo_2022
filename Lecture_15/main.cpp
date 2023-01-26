@@ -1,34 +1,57 @@
 ﻿#include <iostream>
 
-#pragma pack(1)
-class A
+struct A
 {
-	long long a = 1;
-	long long c = 2;
-	char b = 3;
+	A(int a, int b) {}
 };
-#pragma pack()
 
 struct String
 {
 private:
 	size_t m_size;
-	char* m_str;
-	mutable int m_counter = 0;
+	char* m_str = nullptr;
+	
 public:
-	String(char* str)
+	// Конструктор по умолчанию
+	String() = default;
+	// Запрещенный конструктор
+	String(int c, size_t size) = delete;
+
+	// Конструктор (Неявное преобразование типов из int в char)
+	String(char c, size_t size) : m_size(size), m_str(new char[size+1])
 	{
-		m_size = strlen(str); // '\0'
-		m_str = new char[m_size+1];
-		std::copy(str, str+m_size+1, m_str); // memcpy
+		std::cout << "Constructor #1" << std::endl;
+		std::fill(m_str, m_str + m_size, c); // memset
+		m_str[m_size] = 0;
 	}
 
-	explicit String(char c, size_t size)  // Неявное преобразование типов из int в char
+	// Member initializer list (список инициализации членов класса)
+	String(char* str) : m_size(strlen(str)), m_str(new char[m_size+1])
 	{
-		m_size = size;
-		m_str = new char[size];
-		for (int i = 0; i < m_size; i++)
-			m_str[i] = c;
+		std::cout << "Constructor #2" << std::endl;
+		std::copy(str, str+m_size, m_str); // memcpy
+		m_str[m_size] = 0;
+	}
+
+	// Конструктор копирования + делегирующий конструктор
+	String(const String& other) : String(other.m_str)
+	{
+		std::cout << "Copy Constructor" << std::endl;
+	}
+
+	String& operator=(String temp)
+	{
+		// Идиома Copy-and-swap
+		std::cout << "Copy assigment operator" << std::endl;	
+		std::swap(m_size, temp.m_size);
+		std::swap(m_str, temp.m_str);
+		return *this;
+	}
+
+	~String() {
+		std::cout << "Destructor" << std::endl;
+		if(m_str != nullptr)
+			delete[] m_str;
 	}
 
 	size_t Size() const		// Константный метод
@@ -38,59 +61,27 @@ public:
 
 	void Print() const
 	{
-		m_counter++;
-		std::cout << m_counter << std::endl;
-		std::cout << m_str << std::endl;
+		for (int i = 0; i < m_size; i++)
+			std::cout << m_str[i];
 	}
 };
 
-//int numOfVoices(const std::string& s) // std::string& s = str;
-//{
-	//s[2] = '2';
-//}
+void f(String s)
+{
+	s.Print();
+}
 
 int main()
 {
-	A a;
-	std::cout << (int)*(char*)((long long*)&a + 2) << std::endl;
+	String s1("Hello, world!");
+	String s2("test");
+	String s3("111");
 
-	std::cout << sizeof(A) << std::endl;
+	s3 = s2 = s1;
 
-	String s(1000.0,5);  
-	s.Print();
-	std::cout << s.Size() << std::endl;
-
-	/*const int n = 12;
-	//n = 12;
-	//std::cin >> n;
-	//int mas[n]; // Не надо
-
-	// Указатели
-	const int* p = &n;	// Указатель на константу
-	//*p = 10;
-	//p += 1;
-	
-	int x = 10;
-	int* const pp = &x;	// Константный указатель
-	//*pp = 12;
-	//pp += 1;
-
-	const int* const p3 = &n; // Константный указатель на константу
-	//*p3 = 13;
-	//p3++;
-
-	const int& y = n; // Ссылка на константу (говорят, Константная ссылка)
-	//int& y = n; // Константная ссылка
-
-	int t = 10;
-
-	int& link = x; // инициализация link
-	link = t; // x = t;
-
-	//std::cout << sizeof(p) << std::endl;
-
-	std::string str("BIG STRING");
-	numOfVoices(str);*/
+	s1.Print();
+	s2.Print();
+	s3.Print();
 
 	return 0;
 }
