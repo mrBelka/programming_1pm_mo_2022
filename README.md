@@ -68,3 +68,6 @@ https://youtu.be/oas_xWU-6pg
 Лекция 16. defult, delete, базовый конструктор, конструктор копирования, делегирующий конструктор, 
 оператор присваивания, правило 3-х, copy-and-swap idiom  
 https://youtu.be/taeW4VwGH8w  
+
+Лекция 17. Перегрузка операторов, friend, rvo, copy ellision  
+https://youtu.be/BVMiGISZbMU  
