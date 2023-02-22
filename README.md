@@ -71,3 +71,6 @@ https://youtu.be/taeW4VwGH8w
 
 Лекция 17. Перегрузка операторов, friend, rvo, copy ellision  
 https://youtu.be/BVMiGISZbMU  
+
+Лекция 18. Висячие ссылки, explicit, casts, templates  
+https://youtu.be/n-xfSJnaABA  

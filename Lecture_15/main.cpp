@@ -1,87 +1,80 @@
 ﻿#include <iostream>
 
-struct A
+// 1.
+template<typename T, typename U> // !!!!!
+void swap(T& a, U& b)
 {
-	A(int a, int b) {}
-};
-
-struct String
-{
-private:
-	size_t m_size;
-	char* m_str = nullptr;
-	
-public:
-	// Конструктор по умолчанию
-	String() = default;
-	// Запрещенный конструктор
-	String(int c, size_t size) = delete;
-
-	// Конструктор (Неявное преобразование типов из int в char)
-	String(char c, size_t size) : m_size(size), m_str(new char[size+1])
-	{
-		std::cout << "Constructor #1" << std::endl;
-		std::fill(m_str, m_str + m_size, c); // memset
-		m_str[m_size] = 0;
-	}
-
-	// Member initializer list (список инициализации членов класса)
-	String(char* str) : m_size(strlen(str)), m_str(new char[m_size+1])
-	{
-		std::cout << "Constructor #2" << std::endl;
-		std::copy(str, str+m_size, m_str); // memcpy
-		m_str[m_size] = 0;
-	}
-
-	// Конструктор копирования + делегирующий конструктор
-	String(const String& other) : String(other.m_str)
-	{
-		std::cout << "Copy Constructor" << std::endl;
-	}
-
-	String& operator=(String temp)
-	{
-		// Идиома Copy-and-swap
-		std::cout << "Copy assigment operator" << std::endl;	
-		std::swap(m_size, temp.m_size);
-		std::swap(m_str, temp.m_str);
-		return *this;
-	}
-
-	~String() {
-		std::cout << "Destructor" << std::endl;
-		if(m_str != nullptr)
-			delete[] m_str;
-	}
-
-	size_t Size() const		// Константный метод
-	{
-		return m_size;
-	}
-
-	void Print() const
-	{
-		for (int i = 0; i < m_size; i++)
-			std::cout << m_str[i];
-	}
-};
-
-void f(String s)
-{
-	s.Print();
+	T tmp = a;
+	a = b;
+	b = tmp;
 }
+
+// 2.
+template<typename T, int N, int M>
+class Matrix
+{
+	T m_matrix[N][M];
+public:
+	void Print()
+	{
+		std::cout << N << " " << M << std::endl;
+		for (int i = 0; i < N; i++)
+			for (int j = 0; j < M; j++)
+				std::cout << m_matrix[i][j];
+	}
+
+	double determinant()
+	{
+		if (N == 2 && M == 2)
+		{
+
+		}
+		else if (N == 3 && M == 3)
+		{
+			m_matrix[2][2];
+		}
+	}
+};
+
+using Matrix22i = Matrix<int, 2, 2>; // typedef
+using Vector2i = Matrix<int, 2, 1>;
+
+// 3. Специализация шаблонов
+template<class T>
+class vector
+{
+public:
+	vector()
+	{
+		std::cout << "all types without bool" << std::endl;
+	}
+};
+
+template<>
+class vector<bool>
+{
+public:
+	vector()
+	{
+		std::cout << "only bool" << std::endl;
+	}
+};
+
+struct RRR
+{
+
+};
 
 int main()
 {
-	String s1("Hello, world!");
-	String s2("test");
-	String s3("111");
+	vector<RRR> v;
 
-	s3 = s2 = s1;
 
-	s1.Print();
-	s2.Print();
-	s3.Print();
+	Matrix22i M;
+	//M.Print();
 
-	return 0;
+
+	int a = 5;
+	double b = 10;
+	swap(a, b);
 }
