@@ -74,3 +74,6 @@ https://youtu.be/BVMiGISZbMU
 
 Лекция 18. Висячие ссылки, explicit, casts, templates  
 https://youtu.be/n-xfSJnaABA  
+
+Лекция 19. Static, logger example  
+https://youtu.be/peiN7N4_Vqk  
