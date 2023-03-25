@@ -77,3 +77,9 @@ https://youtu.be/n-xfSJnaABA
 
 Лекция 19. Static, logger example  
 https://youtu.be/peiN7N4_Vqk  
+
+Лекция 20. Наследование, часть 1  
+https://youtu.be/wkNEBta2MAc  
+
+Лекция 21. Полиморфизм, vtable, virtual, override, final, проблемы множественного наследования  
+https://youtu.be/RvPqQvNANcc  
