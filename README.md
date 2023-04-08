@@ -83,3 +83,9 @@ https://youtu.be/wkNEBta2MAc
 
 Лекция 21. Полиморфизм, vtable, virtual, override, final, проблемы множественного наследования  
 https://youtu.be/RvPqQvNANcc  
+
+Лекция 22. Паттерн фабрика, исключения  
+https://youtu.be/8VpMY40rH0E  
+
+Лекция 23. Умные указатели  
+https://youtu.be/5tRbRCjcXFk  
