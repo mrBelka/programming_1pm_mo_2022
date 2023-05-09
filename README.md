@@ -89,3 +89,12 @@ https://youtu.be/8VpMY40rH0E
 
 Лекция 23. Умные указатели  
 https://youtu.be/5tRbRCjcXFk  
+
+Лекция 24. Гит, ветки, пул реквест  
+https://youtu.be/Thsw5ezMd6s  
+
+Лекция 25. Работа с базой данных на примере SQLite  
+https://youtu.be/246HHdvmA64  
+
+Лекция 26. HttpLib  
+https://youtu.be/k1zESjlVVIQ  
