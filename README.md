@@ -98,3 +98,6 @@ https://youtu.be/246HHdvmA64
 
 Лекция 26. HttpLib  
 https://youtu.be/k1zESjlVVIQ  
+
+Лекция 27. OpenCV  
+https://youtu.be/JViuXD_xSqQ  
